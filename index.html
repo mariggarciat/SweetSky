@@ -7,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>  
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">  
+  <!-- Script oficial de Instagram para cargar los reproductores nativos -->  
   <script async src="//www.instagram.com/embed.js"></script>  
   <style>  
     body { font-family: 'Nunito', sans-serif; background: #faf6f0; color: #4a3f35; }  
@@ -24,6 +25,7 @@
 <body class="h-full relative">  
   <div id="app" class="min-h-full">  
       
+    <!-- BARRA SUPERIOR DERECHA CON ACCESO RÁPIDO A IG Y REGISTRO -->  
     <div class="absolute top-4 right-4 z-50 flex items-center gap-2">  
       <a href="https://www.instagram.com/sweetsky_sc?igsh=MXI2bDhsdWY4cTRodg%3D%3D&utm_source=qr" target="_blank" class="p-2 bg-[#800020]/10 text-[#800020] rounded-full hover:bg-[#800020]/20 transition-all flex items-center justify-center shadow-sm" title="Síguenos en Instagram">  
         <i data-lucide="instagram" class="w-5 h-5"></i>  
@@ -33,6 +35,7 @@
       </button>  
     </div>  
       
+    <!-- HEADER CON EL LOGO OFICIAL DE SWEET SKY -->  
     <header class="py-12 px-4 text-center border-b border-[#800020]/10" style="background: linear-gradient(135deg, #fdfbf7 0%, #f5ebe0 100%);">  
       <div class="max-w-4xl mx-auto flex flex-col items-center mt-6">  
         <div class="w-32 h-32 mb-4 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border border-[#800020]/10">  
@@ -41,26 +44,32 @@
         <h1 class="text-4xl md:text-5xl font-bold playfair text-[#800020]">Sweet Sky</h1>  
         <p class="mt-2 text-amber-900/70 text-lg italic">Un pedacito de cielo en cada bocado ✨ Pavlovas Delicadas</p>  
           
+        <!-- ENLACE DIRECTO DESTACADO EN LA CABECERA -->  
         <a href="https://www.instagram.com/sweetsky_sc?igsh=MXI2bDhsdWY4cTRodg%3D%3D&utm_source=qr" target="_blank" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#800020] hover:underline bg-white px-4 py-1.5 rounded-full border border-[#800020]/10 shadow-sm transition-all">  
           <i data-lucide="instagram" class="w-4 h-4 text-[#800020]"></i> @sweetsky_sc  
         </a>  
       </div>  
     </header>  
   
+    <!-- NAVEGACIÓN DE CATEGORÍAS -->  
     <nav class="sticky top-0 z-40 flex flex-wrap justify-center gap-3 py-4 px-4 bg-[#faf6f0]/95 backdrop-blur shadow-sm border-b border-amber-900/5">  
       <button onclick="filterProducts('all')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">Todas</button>  
       <button onclick="filterProducts('Postre Dulce')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🍓 Postre Dulce</button>  
       <button onclick="filterProducts('Postre Acido')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🫐 Postre Ácido</button>  
     </nav>  
   
+    <!-- CATÁLOGO DINÁMICO DESDE GOOGLE SHEETS -->  
     <main class="max-w-7xl mx-auto px-4 py-10">  
       <h2 class="text-2xl font-bold playfair text-[#800020] mb-6 border-b pb-2 flex items-center gap-2"><i data-lucide="cake"></i> Nuestro Menú Dinámico</h2>  
       <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">  
-        </div>  
+        <!-- Las pavlovas de la base de datos se cargan automáticamente aquí sin botones administrativos -->  
+      </div>  
   
+      <!-- SECCIÓN DE VIDEOS DE INSTAGRAM -->  
       <h2 class="text-2xl font-bold playfair text-[#800020] mt-16 mb-6 border-b pb-2 flex items-center gap-2"><i data-lucide="clapperboard"></i> Sweet Sky Clips</h2>  
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">  
           
+        <!-- Video 1 -->  
         <div class="bg-white rounded-2xl p-4 border border-amber-950/5 shadow-sm video-container flex flex-col justify-between">  
           <div class="w-full overflow-hidden rounded-xl bg-gray-50 flex items-center justify-center">  
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYVhOhti7qm/" data-instgrm-version="14" style="width:100%; margin:0; padding:0;"></blockquote>  
@@ -72,6 +81,7 @@
           </div>  
         </div>  
   
+        <!-- Video 2 -->  
         <div class="bg-white rounded-2xl p-4 border border-amber-950/5 shadow-sm video-container flex flex-col justify-between">  
           <div class="w-full overflow-hidden rounded-xl bg-gray-50 flex items-center justify-center">  
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYf9RApsJu8/" data-instgrm-version="14" style="width:100%; margin:0; padding:0;"></blockquote>  
@@ -83,6 +93,7 @@
           </div>  
         </div>  
   
+        <!-- Video 3 -->  
         <div class="bg-white rounded-2xl p-4 border border-amber-950/5 shadow-sm video-container flex flex-col justify-between">  
           <div class="w-full overflow-hidden rounded-xl bg-gray-50 flex items-center justify-center">  
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DYxCifaxAEA/" data-instgrm-version="14" style="width:100%; margin:0; padding:0;"></blockquote>  
@@ -97,6 +108,7 @@
       </div>  
     </main>  
   
+    <!-- FORMULARIO: REGISTRO DE DATOS DEL CLIENTE -->  
     <div id="client-modal" class="fixed inset-0 z-50 hidden modal-bg items-center justify-center p-4">  
       <div class="bg-white w-full max-w-md rounded-2xl p-8 border border-[#800020]/20 shadow-2xl relative text-gray-800">  
         <button onclick="closeClientForm()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>  
@@ -123,6 +135,7 @@
       </div>  
     </div>  
   
+    <!-- LIGHTBOX (VISUALIZADOR DE FOTOS) -->  
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">  
       <div id="lightbox-content" class="max-w-4xl w-full flex items-center justify-center"></div>  
     </div>  
@@ -152,13 +165,12 @@
   
     // ENVIAR MENSAJE A WHATSAPP  
     function enviarWhatsApp() {  
-      const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. My nombre es…";  
+      const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…";  
       const url = `https://wa.me/584124205708?text=${encodeURIComponent(mensaje)}`;  
       window.open(url, '_blank');  
     }  
   
     function renderProducts(products) {  
-      // Filtramos solo las filas que representan productos válidos (tienen precio y categoría)  
       const validProducts = products.filter(p => p.nombre && p.precio && p.categoria);  
       const grid = document.getElementById('products-grid');  
         
@@ -201,7 +213,6 @@
       lucide.createIcons();  
     }  
   
-    // CONTROLES DEL FORMULARIO DE CLIENTES  
     function openClientForm() {  
       document.getElementById('client-form').reset();  
       document.getElementById('client-modal').classList.replace('hidden', 'flex');  
@@ -209,7 +220,7 @@
   
     function closeClientForm() { document.getElementById('client-modal').classList.replace('flex', 'hidden'); }  
   
-    // ENVÍO DE DATOS DEL CLIENTE A GOOGLE SHEETS  
+    // ENVÍO DE DATOS DEL CLIENTE A GOOGLE SHEETS (CON DIRECCIÓN CORREGIDA)  
     async function handleClientSubmit(e) {  
       e.preventDefault();  
       const btn = document.getElementById('btn-client-save');  
@@ -252,12 +263,10 @@
       items[currentMediaIndex[idx]].classList.replace('hidden-media', 'active-media');  
     }  
   
-    // FILTRO DE CATEGORÍAS  
     function filterProducts(cat) {  
       renderProducts(cat === 'all' ? allProducts : allProducts.filter(p => p.categoria && p.categoria.toLowerCase() === cat.toLowerCase()));  
     }  
   
-    // LIGHTBOX FOTOS  
     function openLightbox(src) {  
       document.getElementById('lightbox-content').innerHTML = `<img src="${src}" class="max-h-[85vh] rounded-2xl shadow-2xl">`;  
       document.getElementById('lightbox').classList.replace('hidden', 'flex');  
@@ -269,3 +278,4 @@
   </script>  
 </body>  
 </html>  
+  
