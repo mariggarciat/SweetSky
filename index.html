@@ -1,4 +1,3 @@
-  
 <!doctype html>  
 <html lang="es" class="h-full">  
 <head>  
@@ -19,19 +18,25 @@
     .modal-bg { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }  
   </style>  
 </head>  
-<body class="h-full">  
+<body class="h-full relative">  
   <div id="app" class="min-h-full">  
       
+    <div class="absolute top-4 right-4 z-50">  
+      <button onclick="openClientForm()" class="px-4 py-2 bg-[#800020] text-white text-xs sm:text-sm rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-1.5 shadow-md shadow-[#800020]/20">  
+        <i data-lucide="user-plus" class="w-4 h-4"></i> Registrar mis Datos 📝  
+      </button>  
+    </div>  
+      
     <header class="py-12 px-4 text-center border-b border-[#800020]/10" style="background: linear-gradient(135deg, #fdfbf7 0%, #f5ebe0 100%);">  
-      <div class="max-w-4xl mx-auto flex flex-col items-center">  
+      <div class="max-w-4xl mx-auto flex flex-col items-center mt-6">  
         <div class="w-32 h-32 mb-4 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border border-[#800020]/10">  
-          <img src="image_4.png" alt="Sweet Sky Logo" class="w-full h-full object-cover">  
+          <img src="IMG_9428.PNG" alt="Sweet Sky Logo" class="w-full h-full object-cover">  
         </div>  
         <h1 class="text-4xl md:text-5xl font-bold playfair text-[#800020]">Sweet Sky</h1>  
         <p class="mt-2 text-amber-900/70 text-lg italic">Un pedacito de cielo en cada bocado ✨ Pavlovas Delicadas</p>  
           
         <div class="flex gap-4 mt-6">  
-          <button onclick="openForm()" class="px-6 py-2.5 bg-[#800020] text-white rounded-full font-semibold hover:scale-105 transition-transform flex items-center gap-2 shadow-md shadow-[#800020]/20">  
+          <button onclick="openForm()" class="px-6 py-2.5 bg-[#800020]/10 text-[#800020] border border-[#800020]/20 rounded-full font-semibold hover:bg-[#800020]/20 transition-all flex items-center gap-2">  
             <i data-lucide="plus-circle" class="w-5 h-5"></i> Añadir Pavlova  
           </button>  
         </div>  
@@ -91,6 +96,32 @@
       </div>  
     </div>  
   
+    <div id="client-modal" class="fixed inset-0 z-50 hidden modal-bg items-center justify-center p-4">  
+      <div class="bg-white w-full max-w-md rounded-2xl p-8 border border-[#800020]/20 shadow-2xl relative text-gray-800">  
+        <button onclick="closeClientForm()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>  
+        <h2 class="text-2xl font-bold playfair text-[#800020] mb-2 text-center">Registro de Clientes</h2>  
+        <p class="text-xs text-gray-500 text-center mb-6">Guarda tus datos para agilizar tus próximos pedidos en Sweet Sky ☁️</p>  
+          
+        <form id="client-form" class="space-y-4 text-sm" onsubmit="handleClientSubmit(event)">  
+          <div>  
+            <label class="block text-gray-600 font-medium mb-1">Nombre Completo</label>  
+            <input type="text" id="c-nombre" required class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 focus:border-[#800020] outline-none" placeholder="Tu nombre">  
+          </div>  
+          <div>  
+            <label class="block text-gray-600 font-medium mb-1">Número de Teléfono</label>  
+            <input type="tel" id="c-telefono" required class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 focus:border-[#800020] outline-none" placeholder="Ej. 0412-1234567">  
+          </div>  
+          <div>  
+            <label class="block text-gray-600 font-medium mb-1">Dirección de Entrega (San Cristóbal)</label>  
+            <textarea id="c-direccion" required class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 h-20 focus:border-[#800020] outline-none" placeholder="Indica sector, calle, punto de referencia..."></textarea>  
+          </div>  
+          <button type="submit" id="btn-client-save" class="w-full py-3 bg-[#800020] text-white font-bold rounded-lg hover:opacity-90 transition-opacity mt-4 shadow-md shadow-[#800020]/10 flex items-center justify-center gap-2">  
+            <i data-lucide="save" class="w-4 h-4"></i> Guardar mis Datos  
+          </button>  
+        </form>  
+      </div>  
+    </div>  
+  
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">  
       <div id="lightbox-content" class="max-w-4xl w-full flex items-center justify-center"></div>  
     </div>  
@@ -118,7 +149,7 @@
       } catch (e) { console.error("Error cargando el catálogo de Sweet Sky"); }  
     }  
   
-    // CORREGIDO: SE QUITO LA PALABRA "URB" DEL MENSAJE AUTOMÁTICO  
+    // ENVIAR MENSAJE A WHATSAPP (CORREGIDO SIN "URB")  
     function enviarWhatsApp() {  
       const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…";  
       const url = `https://wa.me/584124205708?text=${encodeURIComponent(mensaje)}`;  
@@ -170,6 +201,7 @@
       lucide.createIcons();  
     }  
   
+    // INTERFACES Y CONTROLES DEL CATÁLOGO  
     function openForm(prod = null) {  
       document.getElementById('product-form').reset();  
       document.getElementById('edit-id').value = prod ? prod.nombre : "";  
@@ -185,6 +217,46 @@
         document.getElementById('f-m3').value = prod.media3 || "";  
       }  
       document.getElementById('form-modal').classList.replace('hidden', 'flex');  
+    }  
+  
+    function closeForm() { document.getElementById('form-modal').classList.replace('flex', 'hidden'); }  
+  
+    // CONTROLES DEL FORMULARIO DE CLIENTES  
+    function openClientForm() {  
+      document.getElementById('client-form').reset();  
+      document.getElementById('client-modal').classList.replace('hidden', 'flex');  
+    }  
+  
+    function closeClientForm() { document.getElementById('client-modal').classList.replace('flex', 'hidden'); }  
+  
+    // ENVÍO DE DATOS DEL CLIENTE A GOOGLE SHEETS  
+    async function handleClientSubmit(e) {  
+      e.preventDefault();  
+      const btn = document.getElementById('btn-client-save');  
+      btn.innerText = "Registrando...";  
+      btn.disabled = true;  
+  
+      const clientData = {  
+        nombre: document.getElementById('c-nombre').value,  
+        telefono: document.getElementById('c-telefono').value,  
+        direccion: document.getElementById('c-direccion').value  
+      };  
+  
+      try {  
+        await fetch(API_URL, {  
+          method: 'POST',  
+          headers: {'Content-Type': 'application/json'},  
+          body: JSON.stringify({ data: [clientData] })  
+        });  
+        alert("¡Datos registrados con éxito! Gracias por preferir Sweet Sky ☁️");  
+        closeClientForm();  
+      } catch (e) {   
+        alert("Error al conectar con la base de datos");   
+      } finally {  
+        btn.innerHTML = `<i data-lucide="save" class="w-4 h-4"></i> Guardar mis Datos`;  
+        btn.disabled = false;  
+        lucide.createIcons();  
+      }  
     }  
   
     async function handleFormSubmit(e) {  
@@ -234,12 +306,6 @@
       const p = allProducts.find(x => x.nombre === name);  
       if(p) openForm(p);  
     }  
-  
-    function closeForm() { document.getElementById('form-modal').classList.replace('flex', 'hidden'); }  
-  
-    document.addEventListener("DOMContentLoaded", function() {  
-      // Forzar que el click al botón de WhatsApp use la función global  
-    });  
   
     function renderMediaElement(src, isActive, id, productIndex) {  
       const cls = isActive ? 'media-item active-media' : 'media-item hidden-media';  
