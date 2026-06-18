@@ -152,14 +152,14 @@
   
     // ENVIAR MENSAJE A WHATSAPP  
     function enviarWhatsApp() {  
-      const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…";  
+      const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. My nombre es…";  
       const url = `https://wa.me/584124205708?text=${encodeURIComponent(mensaje)}`;  
       window.open(url, '_blank');  
     }  
   
     function renderProducts(products) {  
-      // Filtramos las filas que son productos válidos (tienen nombre y categoría)  
-      const validProducts = products.filter(p => p.nombre && p.categoria);  
+      // Filtramos solo las filas que representan productos válidos (tienen precio y categoría)  
+      const validProducts = products.filter(p => p.nombre && p.precio && p.categoria);  
       const grid = document.getElementById('products-grid');  
         
       if (validProducts.length === 0) {  
@@ -217,7 +217,7 @@
       btn.disabled = true;  
   
       const clientData = {  
-        nombre: document.getElementById('c-nombre').value,  
+        nombre_cliente: document.getElementById('c-nombre').value,  
         telefono: document.getElementById('c-telefono').value,  
         direccion: document.getElementById('c-direccion').value  
       };  
