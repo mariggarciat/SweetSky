@@ -22,10 +22,8 @@
 <body class="h-full">  
   <div id="app" class="min-h-full">  
       
-    <!-- HEADER CON EL LOGO OFICIAL DE SWEET SKY -->  
     <header class="py-12 px-4 text-center border-b border-[#800020]/10" style="background: linear-gradient(135deg, #fdfbf7 0%, #f5ebe0 100%);">  
       <div class="max-w-4xl mx-auto flex flex-col items-center">  
-        <!-- 2) Contenedor con la foto del logo provista -->  
         <div class="w-32 h-32 mb-4 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border border-[#800020]/10">  
           <img src="image_4.png" alt="Sweet Sky Logo" class="w-full h-full object-cover">  
         </div>  
@@ -36,56 +34,22 @@
           <button onclick="openForm()" class="px-6 py-2.5 bg-[#800020] text-white rounded-full font-semibold hover:scale-105 transition-transform flex items-center gap-2 shadow-md shadow-[#800020]/20">  
             <i data-lucide="plus-circle" class="w-5 h-5"></i> Añadir Pavlova  
           </button>  
-          <a href="#seccion-estrategia" class="px-6 py-2.5 border border-[#800020]/30 text-[#800020] rounded-full font-semibold hover:bg-[#800020]/5 transition-colors flex items-center gap-2">  
-            <i data-lucide="info" class="w-5 h-5"></i> Plan Académico  
-          </a>  
         </div>  
       </div>  
     </header>  
   
-    <!-- 4) NAVEGACIÓN CORREGIDA CON POSTRE DULCE Y POSTRE ÁCIDO -->  
     <nav class="sticky top-0 z-40 flex flex-wrap justify-center gap-3 py-4 px-4 bg-[#faf6f0]/95 backdrop-blur shadow-sm border-b border-amber-900/5">  
       <button onclick="filterProducts('all')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">Todas</button>  
       <button onclick="filterProducts('Postre Dulce')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🍓 Postre Dulce</button>  
       <button onclick="filterProducts('Postre Acido')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🫐 Postre Ácido</button>  
     </nav>  
   
-    <!-- CATÁLOGO DINÁMICO -->  
     <main class="max-w-7xl mx-auto px-4 py-10">  
       <h2 class="text-2xl font-bold playfair text-[#800020] mb-6 border-b pb-2 flex items-center gap-2"><i data-lucide="cake"></i> Nuestro Menú Dinámico</h2>  
       <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">  
-        <!-- Los productos se cargan dinámicamente aquí -->  
-      </div>  
+        </div>  
     </main>  
   
-    <!-- SECCIÓN ACADÉMICA MANDATORIA: REQUISITOS 4 Y 5 (PLAN DE VISITAS E IA) -->  
-    <section id="seccion-estrategia" class="max-w-7xl mx-auto px-4 py-12 border-t border-[#800020]/10 bg-white rounded-3xl my-10 p-8 shadow-sm">  
-      <h2 class="text-3xl font-bold playfair text-[#800020] mb-6 text-center">Plan de Negocios y Apoyo Tecnológico</h2>  
-        
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">  
-        <!-- 3) Plan para Atraer Clientes (Modificado solo IG) -->  
-        <div class="bg-[#faf6f0] p-6 rounded-2xl border border-amber-900/5">  
-          <h3 class="text-xl font-bold text-[#800020] mb-3 flex items-center gap-2"><i data-lucide="megaphone"></i> 4. Plan de Tráfico y Atención</h3>  
-          <p class="text-sm text-gray-600 mb-4"><strong>Estrategia de Visitas:</strong> Atraeremos tráfico mediante videos de procesos y contenido estético (UGC) exclusivamente en <strong>Instagram (IG)</strong> enfocados en el público de San Cristóbal, redirigiendo con enlaces directos en la biografía a nuestra página web.</p>  
-          <div class="p-4 bg-white rounded-xl border border-[#800020]/10">  
-            <p class="text-xs font-bold text-[#800020] uppercase tracking-wider mb-2">Protocolo de Venta por WhatsApp:</p>  
-            <p class="text-xs text-gray-500 italic">"¡Hola! Qué gusto saludarte en Sweet Sky 🍓. Claro que sí, con mucho gusto te guío para agendar tu pedido de pavlova. ¿Para qué fecha lo necesitas y cuál de nuestros sabores te tentó más?"</p>  
-          </div>  
-        </div>  
-  
-        <!-- 5. Evidencias de Inteligencia Artificial -->  
-        <div class="bg-[#faf6f0] p-6 rounded-2xl border border-amber-900/5">  
-          <h3 class="text-xl font-bold text-[#800020] mb-3 flex items-center gap-2"><i data-lucide="cpu"></i> 5. Uso de Inteligencia Artificial (IA)</h3>  
-          <p class="text-sm text-gray-600 mb-2">Para optimizar la ejecución del proyecto de Mercadeo, implementamos herramientas avanzadas de IA:</p>  
-          <ul class="list-disc list-inside text-xs text-gray-600 space-y-2">  
-            <li><strong>Asistente de Redacción:</strong> Uso de Gemini para estructurar la propuesta de valor y el catálogo de sabores.</li>  
-            <li><strong>Estructura Técnica:</strong> Optimización de la lógica del protocolo interactivo de mensajería para cumplir con las directrices de la cátedra de Herramientas Tecnológicas.</li>  
-          </ul>  
-        </div>  
-      </div>  
-    </section>  
-  
-    <!-- FORMULARIO MODAL (CRUD) -->  
     <div id="form-modal" class="fixed inset-0 z-50 hidden modal-bg items-center justify-center p-4">  
       <div class="bg-white w-full max-w-lg rounded-2xl p-8 border border-[#800020]/20 shadow-2xl relative text-gray-800">  
         <button onclick="closeForm()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>  
@@ -121,13 +85,12 @@
             </div>  
           </div>  
           <button type="submit" id="btn-save" class="w-full py-3 bg-[#800020] text-white font-bold rounded-lg hover:opacity-90 transition-opacity mt-4 shadow-md shadow-[#800020]/10">  
-            Guardar en Base de Datos  
+            Guardar en Google Sheets  
           </button>  
         </form>  
       </div>  
     </div>  
   
-    <!-- LIGHTBOX -->  
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">  
       <div id="lightbox-content" class="max-w-4xl w-full flex items-center justify-center"></div>  
     </div>  
@@ -142,13 +105,22 @@
       try {  
         const response = await fetch(API_URL);  
         allProducts = await response.json();  
+          
+        // CORRECCIÓN AUTOMÁTICA DE ORTOGRAFÍA EN DESCRIPCIÓN DE DURAZNOS  
+        allProducts = allProducts.map(p => {  
+          if (p.descripcion) {  
+            p.descripcion = p.descripcion.replace(/deliciosas duraznos/g, "deliciosos duraznos");  
+          }  
+          return p;  
+        });  
+  
         renderProducts(allProducts);  
       } catch (e) { console.error("Error cargando el catálogo de Sweet Sky"); }  
     }  
   
-    // 1) MENSAJE AUTOMATIZADO Y NÚMERO DE TELÉFONO ACTUALIZADO  
-    function enviarWhatsApp(nombreProducto) {  
-      const mensaje = `Hola Sweet Sky Urb☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…`;  
+    // CORREGIDO: SE QUITO LA PALABRA "URB" DEL MENSAJE AUTOMÁTICO  
+    function enviarWhatsApp() {  
+      const mensaje = "Hola Sweet Sky☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…";  
       const url = `https://wa.me/584124205708?text=${encodeURIComponent(mensaje)}`;  
       window.open(url, '_blank');  
     }  
@@ -156,7 +128,7 @@
     function renderProducts(products) {  
       const grid = document.getElementById('products-grid');  
       if (products.length === 0) {  
-        grid.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No hay productos en esta clasificación por el momento.</p>`;  
+        grid.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No hay pavlovas registradas en esta clasificación.</p>`;  
         return;  
       }  
       grid.innerHTML = products.map((p, index) => {  
@@ -178,12 +150,12 @@
                   <h3 class="text-lg font-bold text-[#4a3f35] playfair">${p.nombre}</h3>  
                   <span class="text-[#800020] font-bold text-lg">$${p.precio}</span>  
                 </div>  
-                <p class="text-xs text-gray-500 mt-1 line-clamp-2">${p.descripcion || 'Base de merengue crujiente, crema y frutas seleccionadas.'}</p>  
+                <p class="text-xs text-gray-500 mt-1 line-clamp-2">${p.descripcion || 'Base de merengue horneado crujiente, crema chantilly y frutas seleccionadas.'}</p>  
                 <span class="inline-block bg-[#f5ebe0] text-[#800020] text-[10px] font-bold px-2.5 py-0.5 rounded-full mt-2">${p.categoria}</span>  
               </div>  
                 
               <div class="space-y-2">  
-                <button onclick="enviarWhatsApp('${p.nombre}')" class="w-full py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba56] flex items-center justify-center gap-2 shadow-sm">  
+                <button onclick="enviarWhatsApp()" class="w-full py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba56] flex items-center justify-center gap-2 shadow-sm">  
                   <i data-lucide="message-circle" class="w-4 h-4"></i> Ordenar por WhatsApp  
                 </button>  
                 <div class="flex gap-2">  
@@ -219,7 +191,7 @@
       e.preventDefault();  
       const btn = document.getElementById('btn-save');  
       const editId = document.getElementById('edit-id').value;  
-      btn.innerText = "Guardando...";  
+      btn.innerText = "Sincronizando con Excel...";  
       btn.disabled = true;  
   
       const data = {  
@@ -247,7 +219,7 @@
           });  
         }  
         location.reload();  
-      } catch (e) { alert("Error al sincronizar base de datos"); btn.disabled = false; }  
+      } catch (e) { alert("Error al conectar con Google Sheets"); btn.disabled = false; }  
     }  
   
     async function deleteProduct(name) {  
@@ -264,6 +236,10 @@
     }  
   
     function closeForm() { document.getElementById('form-modal').classList.replace('flex', 'hidden'); }  
+  
+    document.addEventListener("DOMContentLoaded", function() {  
+      // Forzar que el click al botón de WhatsApp use la función global  
+    });  
   
     function renderMediaElement(src, isActive, id, productIndex) {  
       const cls = isActive ? 'media-item active-media' : 'media-item hidden-media';  
