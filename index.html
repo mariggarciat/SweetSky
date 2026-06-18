@@ -1,3 +1,4 @@
+  
 <!doctype html>  
 <html lang="es" class="h-full">  
 <head>  
@@ -21,10 +22,12 @@
 <body class="h-full">  
   <div id="app" class="min-h-full">  
       
+    <!-- HEADER CON EL LOGO OFICIAL DE SWEET SKY -->  
     <header class="py-12 px-4 text-center border-b border-[#800020]/10" style="background: linear-gradient(135deg, #fdfbf7 0%, #f5ebe0 100%);">  
       <div class="max-w-4xl mx-auto flex flex-col items-center">  
-        <div class="w-32 h-32 mb-4 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden border border-amber-900/5">  
-          <span class="text-xs text-gray-400">Sweet Sky Logo</span>  
+        <!-- 2) Contenedor con la foto del logo provista -->  
+        <div class="w-32 h-32 mb-4 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border border-[#800020]/10">  
+          <img src="image_4.png" alt="Sweet Sky Logo" class="w-full h-full object-cover">  
         </div>  
         <h1 class="text-4xl md:text-5xl font-bold playfair text-[#800020]">Sweet Sky</h1>  
         <p class="mt-2 text-amber-900/70 text-lg italic">Un pedacito de cielo en cada bocado ✨ Pavlovas Delicadas</p>  
@@ -40,32 +43,37 @@
       </div>  
     </header>  
   
-    <nav class="sticky top-0 z-40 flex flex-wrap justify-center gap-3 py-4 px-4 bg(#faf6f0)/95 backdrop-blur shadow-sm border-b border-amber-900/5">  
+    <!-- 4) NAVEGACIÓN CORREGIDA CON POSTRE DULCE Y POSTRE ÁCIDO -->  
+    <nav class="sticky top-0 z-40 flex flex-wrap justify-center gap-3 py-4 px-4 bg-[#faf6f0]/95 backdrop-blur shadow-sm border-b border-amber-900/5">  
       <button onclick="filterProducts('all')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">Todas</button>  
-      <button onclick="filterProducts('Clasicas')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🍓 Clásicas</button>  
-      <button onclick="filterProducts('Especiales')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🍫 Especiales</button>  
-      <button onclick="filterProducts('Mini')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🧁 Mini Pavlovas</button>  
+      <button onclick="filterProducts('Postre Dulce')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🍓 Postre Dulce</button>  
+      <button onclick="filterProducts('Postre Acido')" class="px-5 py-1.5 rounded-full border border-[#800020]/20 text-[#800020] hover:bg-[#800020] hover:text-white transition-all font-medium">🫐 Postre Ácido</button>  
     </nav>  
   
+    <!-- CATÁLOGO DINÁMICO -->  
     <main class="max-w-7xl mx-auto px-4 py-10">  
       <h2 class="text-2xl font-bold playfair text-[#800020] mb-6 border-b pb-2 flex items-center gap-2"><i data-lucide="cake"></i> Nuestro Menú Dinámico</h2>  
       <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">  
-        </div>  
+        <!-- Los productos se cargan dinámicamente aquí -->  
+      </div>  
     </main>  
   
+    <!-- SECCIÓN ACADÉMICA MANDATORIA: REQUISITOS 4 Y 5 (PLAN DE VISITAS E IA) -->  
     <section id="seccion-estrategia" class="max-w-7xl mx-auto px-4 py-12 border-t border-[#800020]/10 bg-white rounded-3xl my-10 p-8 shadow-sm">  
       <h2 class="text-3xl font-bold playfair text-[#800020] mb-6 text-center">Plan de Negocios y Apoyo Tecnológico</h2>  
         
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">  
+        <!-- 3) Plan para Atraer Clientes (Modificado solo IG) -->  
         <div class="bg-[#faf6f0] p-6 rounded-2xl border border-amber-900/5">  
           <h3 class="text-xl font-bold text-[#800020] mb-3 flex items-center gap-2"><i data-lucide="megaphone"></i> 4. Plan de Tráfico y Atención</h3>  
-          <p class="text-sm text-gray-600 mb-4"><strong>Estrategia de Visitas:</strong> Atraeremos tráfico mediante videos de procesos (UGC) en Instagram y TikTok enfocados en el público de San Cristóbal, redirigiendo con enlaces directos a nuestra web.</p>  
+          <p class="text-sm text-gray-600 mb-4"><strong>Estrategia de Visitas:</strong> Atraeremos tráfico mediante videos de procesos y contenido estético (UGC) exclusivamente en <strong>Instagram (IG)</strong> enfocados en el público de San Cristóbal, redirigiendo con enlaces directos en la biografía a nuestra página web.</p>  
           <div class="p-4 bg-white rounded-xl border border-[#800020]/10">  
             <p class="text-xs font-bold text-[#800020] uppercase tracking-wider mb-2">Protocolo de Venta por WhatsApp:</p>  
             <p class="text-xs text-gray-500 italic">"¡Hola! Qué gusto saludarte en Sweet Sky 🍓. Claro que sí, con mucho gusto te guío para agendar tu pedido de pavlova. ¿Para qué fecha lo necesitas y cuál de nuestros sabores te tentó más?"</p>  
           </div>  
         </div>  
   
+        <!-- 5. Evidencias de Inteligencia Artificial -->  
         <div class="bg-[#faf6f0] p-6 rounded-2xl border border-amber-900/5">  
           <h3 class="text-xl font-bold text-[#800020] mb-3 flex items-center gap-2"><i data-lucide="cpu"></i> 5. Uso de Inteligencia Artificial (IA)</h3>  
           <p class="text-sm text-gray-600 mb-2">Para optimizar la ejecución del proyecto de Mercadeo, implementamos herramientas avanzadas de IA:</p>  
@@ -77,6 +85,7 @@
       </div>  
     </section>  
   
+    <!-- FORMULARIO MODAL (CRUD) -->  
     <div id="form-modal" class="fixed inset-0 z-50 hidden modal-bg items-center justify-center p-4">  
       <div class="bg-white w-full max-w-lg rounded-2xl p-8 border border-[#800020]/20 shadow-2xl relative text-gray-800">  
         <button onclick="closeForm()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>  
@@ -87,14 +96,13 @@
           <div class="grid grid-cols-2 gap-4">  
             <div class="col-span-2">  
               <label class="block text-gray-600 font-medium mb-1">Nombre de la Pavlova</label>  
-              <input type="text" id="f-nombre" required class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 focus:border-[#800020] outline-none">  
+              <input type="text" id="f-nombre" required class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 focus:border-[#800020] outline-none" placeholder="Ej. Pavlova de Fresa">  
             </div>  
             <div>  
               <label class="block text-gray-600 font-medium mb-1">Categoría</label>  
               <select id="f-categoria" class="w-full bg-[#faf6f0] border border-gray-200 rounded-lg px-4 py-2 outline-none">  
-                <option value="Clasicas">Clásicas</option>  
-                <option value="Especiales">Especiales</option>  
-                <option value="Mini">Mini Pavlova</option>  
+                <option value="Postre Dulce">Postre Dulce (Fresa / Durazno)</option>  
+                <option value="Postre Acido">Postre Ácido (Arándanos)</option>  
               </select>  
             </div>  
             <div>  
@@ -119,6 +127,7 @@
       </div>  
     </div>  
   
+    <!-- LIGHTBOX -->  
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">  
       <div id="lightbox-content" class="max-w-4xl w-full flex items-center justify-center"></div>  
     </div>  
@@ -137,22 +146,21 @@
       } catch (e) { console.error("Error cargando el catálogo de Sweet Sky"); }  
     }  
   
-    // MANDATORIO REQUERIMIENTO 3: MENSAJE AUTOMATIZADO ESTRUCTURADO PARA WHATSAPP  
-    function enviarWhatsApp(nombreProducto, precio) {  
-      const mensaje = `Hola Sweet Sky, vi su página web y me interesa el producto: ${nombreProducto} ($${precio}). Mi nombre es...`;  
-      const url = `https://wa.me/584247000000?text=${encodeURIComponent(mensaje)}`; // <- Reemplaza con tu número real si no usas el link corto directo  
+    // 1) MENSAJE AUTOMATIZADO Y NÚMERO DE TELÉFONO ACTUALIZADO  
+    function enviarWhatsApp(nombreProducto) {  
+      const mensaje = `Hola Sweet Sky Urb☁️, me gustaria ordenar una de sus pavlovas!. Mi nombre es…`;  
+      const url = `https://wa.me/584124205708?text=${encodeURIComponent(mensaje)}`;  
       window.open(url, '_blank');  
     }  
   
     function renderProducts(products) {  
       const grid = document.getElementById('products-grid');  
       if (products.length === 0) {  
-        grid.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No hay productos en esta categoría por el momento.</p>`;  
+        grid.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No hay productos en esta clasificación por el momento.</p>`;  
         return;  
       }  
       grid.innerHTML = products.map((p, index) => {  
         const media = [p.media1, p.media2, p.media3].filter(m => m && m.trim() !== "");  
-        // Fallback si no hay imágenes cargadas en la API aún  
         if(media.length === 0) media.push('https://images.unsplash.com/photo-1511018556340-d16986a1c194?w=500');   
           
         return `  
@@ -168,14 +176,14 @@
               <div>  
                 <div class="flex justify-between items-start">  
                   <h3 class="text-lg font-bold text-[#4a3f35] playfair">${p.nombre}</h3>  
-                  <span class="text-[#800020] font-bold text-lg">$${p.precio || p.precio}</span>  
+                  <span class="text-[#800020] font-bold text-lg">$${p.precio}</span>  
                 </div>  
-                <p class="text-xs text-gray-500 mt-1 line-clamp-2">${p.descripcion || 'Deliciosa base de merengue horneado, crocante por fuera y suave por dentro.'}</p>  
-                <span class="inline-block bg-[#f5ebe0] text-[#800020] text-[10px] font-bold px-2.5 py-0.5 rounded-full mt-2">${p.categoria || 'Clásica'}</span>  
+                <p class="text-xs text-gray-500 mt-1 line-clamp-2">${p.descripcion || 'Base de merengue crujiente, crema y frutas seleccionadas.'}</p>  
+                <span class="inline-block bg-[#f5ebe0] text-[#800020] text-[10px] font-bold px-2.5 py-0.5 rounded-full mt-2">${p.categoria}</span>  
               </div>  
                 
               <div class="space-y-2">  
-                <button onclick="enviarWhatsApp('${p.nombre}', '${p.precio}')" class="w-full py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba56] flex items-center justify-center gap-2 shadow-sm shadow-green-950/10">  
+                <button onclick="enviarWhatsApp('${p.nombre}')" class="w-full py-2 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba56] flex items-center justify-center gap-2 shadow-sm">  
                   <i data-lucide="message-circle" class="w-4 h-4"></i> Ordenar por WhatsApp  
                 </button>  
                 <div class="flex gap-2">  
@@ -211,7 +219,7 @@
       e.preventDefault();  
       const btn = document.getElementById('btn-save');  
       const editId = document.getElementById('edit-id').value;  
-      btn.innerText = "Guardando en SheetDB...";  
+      btn.innerText = "Guardando...";  
       btn.disabled = true;  
   
       const data = {  
@@ -239,11 +247,11 @@
           });  
         }  
         location.reload();  
-      } catch (e) { alert("Error al sincronizar con la base de datos"); btn.disabled = false; }  
+      } catch (e) { alert("Error al sincronizar base de datos"); btn.disabled = false; }  
     }  
   
     async function deleteProduct(name) {  
-      if(!confirm(`¿Eliminar la pavlova "${name}" del catálogo?`)) return;  
+      if(!confirm(`¿Eliminar la pavlova "${name}"?`)) return;  
       try {  
         await fetch(`${API_URL}/nombre/${name}`, { method: 'DELETE' });  
         location.reload();  
@@ -259,7 +267,7 @@
   
     function renderMediaElement(src, isActive, id, productIndex) {  
       const cls = isActive ? 'media-item active-media' : 'media-item hidden-media';  
-      return `<img id="${id}" src="${src}" class="${cls} rounded-xl shadow-inner" onclick="openLightbox('${src}')">`;  
+      return `<img id="${id}" src="${src}" class="${cls} rounded-xl" onclick="openLightbox('${src}')">`;  
     }  
   
     function changeMedia(idx, step) {  
